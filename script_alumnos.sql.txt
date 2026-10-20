@@ -1,0 +1,299 @@
+-- ============================================================
+-- PROYECTO: GESTIÓN DE ALUMNOS (ORACLE SQL)
+-- ============================================================
+
+-- 1. CREACIÓN DE LA TABLA ALUMNOS
+CREATE TABLE ALUMNOS (
+    ID_MATRICULA NUMBER,
+    NOMBRE NVARCHAR2(200),
+    APELLIDO NVARCHAR2(200),
+    EDAD NUMBER,
+    SEXO NVARCHAR2(20),
+    UNIVERSIDAD NVARCHAR2(200),
+    CARRERA NVARCHAR2(200),
+    ESPECIALIDAD NVARCHAR2(200),
+    DIRECCION NVARCHAR2(150),
+    CONSTRAINT PK_ALUMNOS PRIMARY KEY (ID_MATRICULA)
+);
+
+-- 2. INSERCIÓN DE REGISTROS (230 ALUMNOS)
+INSERT INTO ALUMNOS VALUES (2001, 'SEBASTIAN', 'LOPEZ', 21, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2002, 'VALENTINA', 'GARCIA', 22, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2003, 'MATEO', 'HERNANDEZ', 23, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2004, 'CAMILA', 'MARTINEZ', 20, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2005, 'SANTIAGO', 'GONZALEZ', 24, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2006, 'REGINA', 'RODRIGUEZ', 19, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2007, 'LEONARDO', 'PEREZ', 25, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2008, 'SOFIA', 'SANCHEZ', 22, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2009, 'MATIAS', 'RAMIREZ', 21, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2010, 'VICTORIA', 'CRUZ', 23, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2011, 'EMILIANO', 'FLORES', 20, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2012, 'NATALIA', 'GOMEZ', 24, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2013, 'GABRIEL', 'MORALES', 22, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2014, 'DANIELA', 'VAZQUEZ', 25, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2015, 'THIAGO', 'JIMENEZ', 19, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2016, 'XIMENA', 'REYES', 21, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2017, 'NICOLAS', 'DIAZ', 23, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2018, 'MARIANA', 'TORRES', 20, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2019, 'SAMUEL', 'GUTIERREZ', 22, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2020, 'RENATA', 'MENDOZA', 24, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2021, 'ALEXANDER', 'AGUILAR', 19, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2022, 'VALERIA', 'SILVA', 20, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2023, 'ADRIAN', 'ROJAS', 21, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2024, 'ANDREA', 'ORTIZ', 22, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2025, 'CARLOS', 'NAVARRO', 23, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2026, 'LUCIA', 'DELGADO', 24, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2027, 'HECTOR', 'CASTRO', 25, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2028, 'FERNANDA', 'HERRERA', 26, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2029, 'OSCAR', 'MEDINA', 27, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2030, 'KAREN', 'SALAZAR', 18, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2031, 'RAUL', 'ROMERO', 19, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2032, 'SOFIA', 'VARGAS', 20, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2033, 'EDGAR', 'GUERRERO', 21, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2034, 'PATRICIA', 'ESTRADA', 22, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2035, 'IVAN', 'CONTRERAS', 23, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2036, 'ELENA', 'SANDOVAL', 24, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2037, 'SERGIO', 'ROSALES', 25, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2038, 'ROSA', 'IBARRA', 26, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2039, 'JORGE', 'PACHECO', 27, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2040, 'DIANA', 'GUTIERREZ', 18, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2041, 'MARIO', 'GARCIA', 19, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2042, 'BEATRIZ', 'PEREZ', 20, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2043, 'ENRIQUE', 'SANCHEZ', 21, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2044, 'CLAUDIA', 'RAMOS', 22, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2045, 'ADRIAN', 'ORTEGA', 23, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2046, 'DULCE', 'DELGADO', 24, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2047, 'EMILIANO', 'NAVARRO', 25, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2048, 'ESTHER', 'HERRERA', 26, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2049, 'GUSTAVO', 'MEDINA', 27, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2050, 'FATIMA', 'SALAZAR', 18, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2051, 'ALBERTO', 'ROMERO', 19, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2052, 'GLORIA', 'VARGAS', 20, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2053, 'VICTOR', 'CASTRO', 21, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2054, 'HILDA', 'ORTIZ', 22, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2055, 'MANUEL', 'GUERRERO', 23, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2056, 'IRENE', 'ESTRADA', 24, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2057, 'DAVID', 'CONTRERAS', 25, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2058, 'JULIA', 'SANDOVAL', 26, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2059, 'ARTURO', 'ROSALES', 27, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2060, 'LETICIA', 'IBARRA', 18, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2061, 'JAVIER', 'LOPEZ', 19, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2062, 'MARISOL', 'GARCIA', 20, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2063, 'FELIPE', 'HERNANDEZ', 21, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2064, 'NANCY', 'MARTINEZ', 22, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2065, 'EDUARDO', 'GONZALEZ', 23, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2066, 'OLGA', 'RODRIGUEZ', 24, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2067, 'ROBERTO', 'PEREZ', 25, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2068, 'PILAR', 'SANCHEZ', 26, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2069, 'IGNACIO', 'RAMIREZ', 27, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2070, 'REBECA', 'CRUZ', 18, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2071, 'ALFREDO', 'FLORES', 19, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2072, 'SILVIA', 'GOMEZ', 20, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2073, 'BRYAN', 'MORALES', 21, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2074, 'TANIA', 'VAZQUEZ', 22, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2075, 'KEVIN', 'JIMENEZ', 23, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2076, 'VANESSA', 'REYES', 24, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2077, 'ANGEL', 'DIAZ', 25, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2078, 'XIMENA', 'TORRES', 26, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2079, 'DANIEL', 'GUTIERREZ', 27, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2080, 'YESENIA', 'MENDOZA', 18, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2081, 'MARCOS', 'AGUILAR', 19, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2082, 'ADRIANA', 'SILVA', 20, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2083, 'GERARDO', 'ROJAS', 21, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2084, 'BRENDA', 'ORTIZ', 22, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2085, 'ISRAEL', 'NAVARRO', 23, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2086, 'CARMEN', 'DELGADO', 24, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2087, 'ABEL', 'CASTRO', 25, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2088, 'DENISE', 'HERRERA', 26, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2089, 'CESAR', 'MEDINA', 27, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2090, 'ELIZABETH', 'SALAZAR', 18, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2091, 'FRANCISCO', 'ROMERO', 19, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2092, 'FLOR', 'VARGAS', 20, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2093, 'GABRIEL', 'GUERRERO', 21, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2094, 'GUADALUPE', 'ESTRADA', 22, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2095, 'HUGO', 'CONTRERAS', 23, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2096, 'IVONNE', 'SANDOVAL', 24, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2097, 'LEONEL', 'ROSALES', 25, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2098, 'JAZMIN', 'IBARRA', 26, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2099, 'MAURICIO', 'PACHECO', 27, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2100, 'LILIANA', 'GUTIERREZ', 18, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2101, 'NESTOR', 'LOPEZ', 19, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2102, 'MIRIAM', 'GARCIA', 20, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2103, 'OMAR', 'HERNANDEZ', 21, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2104, 'NATALIA', 'MARTINEZ', 22, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2105, 'PABLO', 'GONZALEZ', 23, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2106, 'OFELIA', 'RODRIGUEZ', 24, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2107, 'RUBEN', 'PEREZ', 25, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2108, 'PAULINA', 'SANCHEZ', 26, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2109, 'SAUL', 'RAMIREZ', 27, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2110, 'ROCIO', 'CRUZ', 18, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2111, 'TOMAS', 'FLORES', 19, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2112, 'SARA', 'GOMEZ', 20, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2113, 'URIEL', 'MORALES', 21, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2114, 'TERESA', 'VAZQUEZ', 22, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2115, 'XAVIER', 'JIMENEZ', 23, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2116, 'VERONICA', 'REYES', 24, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2117, 'ULISES', 'DIAZ', 25, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2118, 'WENDY', 'TORRES', 26, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2119, 'ALEXIS', 'GUTIERREZ', 27, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2120, 'ZOE', 'MENDOZA', 18, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2121, 'ALEXANDER', 'AGUILAR', 20, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2122, 'SOFIA', 'SILVA', 21, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2123, 'DANIEL', 'ROJAS', 22, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2124, 'VALERIA', 'ORTIZ', 23, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2125, 'MATEO', 'NAVARRO', 24, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2126, 'CAMILA', 'DELGADO', 20, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2127, 'SEBASTIAN', 'CASTRO', 21, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2128, 'RENATA', 'HERRERA', 22, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2129, 'EMILIO', 'MEDINA', 23, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2130, 'REGINA', 'SALAZAR', 24, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2131, 'DIEGO', 'ROMERO', 20, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2132, 'MARIANA', 'VARGAS', 21, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2133, 'LEONARDO', 'GUERRERO', 22, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2134, 'FERNANDA', 'ESTRADA', 23, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2135, 'SANTIAGO', 'CONTRERAS', 24, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2136, 'PAOLA', 'SANDOVAL', 20, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2137, 'MIGUEL', 'ROSALES', 21, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2138, 'ANDREA', 'IBARRA', 22, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2139, 'JORGE', 'PACHECO', 23, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2140, 'LUCIA', 'GUTIERREZ', 24, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2141, 'CARLOS', 'LOPEZ', 20, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2142, 'ELENA', 'GARCIA', 21, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2143, 'ADRIAN', 'HERNANDEZ', 22, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2144, 'DANIELA', 'MARTINEZ', 23, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2145, 'LUIS', 'GONZALEZ', 24, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2146, 'KAREN', 'RODRIGUEZ', 20, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2147, 'RODRIGO', 'PEREZ', 21, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2148, 'NATALIA', 'SANCHEZ', 22, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2149, 'MARIO', 'RAMIREZ', 23, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2150, 'CLAUDIA', 'CRUZ', 24, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2151, 'ALBERTO', 'FLORES', 20, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2152, 'BRENDA', 'GOMEZ', 21, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2153, 'FRANCISCO', 'MORALES', 22, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2154, 'MELISSA', 'VAZQUEZ', 23, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2155, 'GERARDO', 'JIMENEZ', 24, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2156, 'PAULINA', 'REYES', 20, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2157, 'ALEJANDRO', 'DIAZ', 21, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2158, 'MARIANA', 'TORRES', 22, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2159, 'OSCAR', 'GUTIERREZ', 23, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2160, 'DIANA', 'MENDOZA', 24, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2161, 'RAUL', 'AGUILAR', 20, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2162, 'SOFIA', 'SILVA', 21, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2163, 'IVAN', 'ROJAS', 22, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2164, 'LAURA', 'ORTIZ', 23, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2165, 'HECTOR', 'NAVARRO', 24, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2166, 'MELINA', 'DELGADO', 20, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2167, 'ARTURO', 'CASTRO', 21, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2168, 'GABRIELA', 'HERRERA', 22, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2169, 'RICARDO', 'MEDINA', 23, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2170, 'PATRICIA', 'SALAZAR', 24, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2171, 'MATEO', 'ROMERO', 19, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2172, 'CAMILA', 'VARGAS', 20, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2173, 'SANTIAGO', 'GUERRERO', 21, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2174, 'VALENTINA', 'ESTRADA', 22, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2175, 'SEBASTIAN', 'CONTRERAS', 23, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2176, 'REGINA', 'SANDOVAL', 24, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2177, 'LEONARDO', 'ROSALES', 25, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2178, 'SOFIA', 'IBARRA', 26, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2179, 'MATIAS', 'PACHECO', 27, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2180, 'VICTORIA', 'GUTIERREZ', 18, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2181, 'EMILIANO', 'LOPEZ', 19, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2182, 'NATALIA', 'GARCIA', 20, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2183, 'GABRIEL', 'HERNANDEZ', 21, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2184, 'DANIELA', 'MARTINEZ', 22, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2185, 'THIAGO', 'GONZALEZ', 23, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2186, 'XIMENA', 'RODRIGUEZ', 24, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2187, 'NICOLAS', 'PEREZ', 25, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2188, 'MARIANA', 'SANCHEZ', 26, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2189, 'SAMUEL', 'RAMIREZ', 27, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2190, 'RENATA', 'CRUZ', 18, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2191, 'ALEXANDER', 'FLORES', 19, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2192, 'VALERIA', 'GOMEZ', 20, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2193, 'ADRIAN', 'MORALES', 21, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2194, 'ANDREA', 'VAZQUEZ', 22, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2195, 'CARLOS', 'JIMENEZ', 23, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2196, 'LUCIA', 'REYES', 24, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2197, 'HECTOR', 'DIAZ', 25, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2198, 'FERNANDA', 'TORRES', 26, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2199, 'OSCAR', 'GUTIERREZ', 27, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2200, 'KAREN', 'MENDOZA', 18, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2201, 'RAUL', 'AGUILAR', 19, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2202, 'SOFIA', 'SILVA', 20, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2203, 'EDGAR', 'ROJAS', 21, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2204, 'PATRICIA', 'ORTIZ', 22, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2205, 'IVAN', 'NAVARRO', 23, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2206, 'ELENA', 'DELGADO', 24, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2207, 'SERGIO', 'CASTRO', 25, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2208, 'ROSA', 'HERRERA', 26, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2209, 'JORGE', 'MEDINA', 27, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2210, 'DIANA', 'SALAZAR', 18, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ciencias de la Computacion', 'Ciberseguridad');
+INSERT INTO ALUMNOS VALUES (2211, 'MARIO', 'ROMERO', 19, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Aeronautica', 'Propulsion de aeronaves');
+INSERT INTO ALUMNOS VALUES (2212, 'BEATRIZ', 'VARGAS', 20, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Licenciatura en Matematicas', 'Optimizacion matematica');
+INSERT INTO ALUMNOS VALUES (2213, 'ENRIQUE', 'GUERRERO', 21, 'MASCULINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Ambiental', 'Tratamiento de aguas');
+INSERT INTO ALUMNOS VALUES (2214, 'CLAUDIA', 'ESTRADA', 22, 'FEMENINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Licenciatura en Fisica', 'Fisica de particulas');
+INSERT INTO ALUMNOS VALUES (2215, 'ADRIAN', 'CONTRERAS', 23, 'MASCULINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Ingenieria en Alimentos', 'Procesamiento de lacteos');
+INSERT INTO ALUMNOS VALUES (2216, 'DULCE', 'SANDOVAL', 24, 'FEMENINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Licenciatura en Economia', 'Finanzas corporativas');
+INSERT INTO ALUMNOS VALUES (2217, 'EMILIANO', 'ROSALES', 25, 'MASCULINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Ingenieria Electromecanica', 'Mantenimiento industrial');
+INSERT INTO ALUMNOS VALUES (2218, 'ESTHER', 'IBARRA', 26, 'FEMENINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Licenciatura en Negocios', 'Comercio exterior');
+INSERT INTO ALUMNOS VALUES (2219, 'GUSTAVO', 'PACHECO', 27, 'MASCULINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Ingenieria de Minas', 'Extraccion sustentable');
+INSERT INTO ALUMNOS VALUES (2220, 'FATIMA', 'GUTIERREZ', 18, 'FEMENINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Bionica', 'Protesis biomecanicas');
+INSERT INTO ALUMNOS VALUES (2221, 'ALBERTO', 'MENDOZA', 19, 'MASCULINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ingenieria Mecatronica', 'Robotica industrial');
+INSERT INTO ALUMNOS VALUES (2222, 'GLORIA', 'LOPEZ', 20, 'FEMENINO', 'UATx', 'Lardizabal y Guridi 1, Tlaxcala, Tlaxcala', 'Ingenieria Quimica', 'Sistemas ambientales');
+INSERT INTO ALUMNOS VALUES (2223, 'VICTOR', 'GARCIA', 21, 'MASCULINO', 'UAEH', 'Abasolo 600, Centro, Pachuca, Hidalgo', 'Ingenieria Biomedica', 'Instrumentacion medica');
+INSERT INTO ALUMNOS VALUES (2224, 'HILDA', 'HERNANDEZ', 22, 'FEMENINO', 'UANL', 'Av. Universidad S/N, San Nicolas de los Garza, N.L.', 'Diseno Industrial', 'Ergonomia de producto');
+INSERT INTO ALUMNOS VALUES (2225, 'MANUEL', 'MARTINEZ', 23, 'MASCULINO', 'UdeG', 'Av. Juarez 976, Centro, Guadalajara, Jalisco', 'Ingenieria Civil', 'Estructuras urbanas');
+INSERT INTO ALUMNOS VALUES (2226, 'IRENE', 'GONZALEZ', 24, 'FEMENINO', 'UNAM', 'Ciudad Universitaria, Coyoacan, CDMX', 'Biotecnologia', 'Genetica vegetal');
+INSERT INTO ALUMNOS VALUES (2227, 'DAVID', 'RODRIGUEZ', 25, 'MASCULINO', 'IPN', 'Av. Luis Enrique Erro S/N, Zacatenco, CDMX', 'Ingenieria Industrial', 'Logistica de cadena de suministro');
+INSERT INTO ALUMNOS VALUES (2228, 'JULIA', 'PEREZ', 26, 'FEMENINO', 'TecNM', 'Av. Universidad 1200, Xoco, CDMX', 'Arquitectura', 'Urbanismo sustentable');
+INSERT INTO ALUMNOS VALUES (2229, 'ARTURO', 'SANCHEZ', 27, 'MASCULINO', 'UAM', 'Calzada del Hueso 1100, Coyoacan, CDMX', 'Ingenieria Electronica', 'Sistemas embebidos');
+INSERT INTO ALUMNOS VALUES (2230, 'LETICIA', 'RAMIREZ', 18, 'FEMENINO', 'BUAP', '4 Sur 104, Centro Historico, Puebla', 'Ciencias de la Computacion', 'Ciberseguridad');
+
+-- 3. CONFIRMACIÓN Y CONSULTA GENERAL DE DATOS
+COMMIT;
+SELECT * FROM ALUMNOS ORDER BY ID_MATRICULA;
+
+-- 4. MANEJO DE PUNTOS DE SALVAGUARDA (SAVEPOINTS Y ROLLBACK)
+SAVEPOINT PUNTOVERSION1;
+SAVEPOINT PUNTOVERSION2;
+
+-- Eliminación de prueba en un rango de matrículas
+DELETE FROM ALUMNOS WHERE ID_MATRICULA BETWEEN 2121 AND 2145;
+
+-- Revertir la eliminación hasta el punto de salvaguarda 2
+ROLLBACK TO PUNTOVERSION2;
+
+-- 5. BÚSQUEDAS CON PATRONES DE TEXTO (OPERADOR LIKE)
+-- Nombres que comienzan con L
+SELECT * FROM ALUMNOS WHERE NOMBRE LIKE 'L%';
+-- Nombres que terminan con A
+SELECT * FROM ALUMNOS WHERE NOMBRE LIKE '%A';
+-- Apellidos que contienen H, P o R
+SELECT * FROM ALUMNOS WHERE APELLIDO LIKE '%H%';
+SELECT * FROM ALUMNOS WHERE APELLIDO LIKE '%P%';
+SELECT * FROM ALUMNOS WHERE APELLIDO LIKE '%R%';
+
+-- 6. FILTRADO POR CONDICIONES NUMÉRICAS Y RANGOS
+SELECT * FROM ALUMNOS WHERE EDAD < 24;
+SELECT * FROM ALUMNOS WHERE EDAD > 24;
+SELECT * FROM ALUMNOS WHERE EDAD > 24 AND EDAD < 26;
+SELECT * FROM ALUMNOS WHERE EDAD BETWEEN 23 AND 24;
+
+-- 7. BÚSQUEDAS ESPECÍFICAS DE REGISTROS (OR / IN)
+SELECT * FROM ALUMNOS WHERE ID_MATRICULA = 2002 OR ID_MATRICULA = 2003 OR ID_MATRICULA = 2006;
+SELECT * FROM ALUMNOS WHERE ID_MATRICULA IN (2002, 2003, 2006);
+
+-- 8. AGRUPACIÓN DE DATOS Y VALORES DISTINTOS
+SELECT SEXO, COUNT(*) FROM ALUMNOS GROUP BY SEXO;
+SELECT DISTINCT EDAD FROM ALUMNOS;
+SELECT DISTINCT APELLIDO FROM ALUMNOS;
+SELECT DISTINCT SEXO FROM ALUMNOS;
+
+-- 9. MODIFICACIÓN DE ESTRUCTURA DE LA TABLA (ALTER TABLE)
+ALTER TABLE ALUMNOS ADD DOMICILIO NVARCHAR2(100);
+
+-- Mostrar columnas específicas tras modificar la estructura
+SELECT ID_MATRICULA, NOMBRE, EDAD, UNIVERSIDAD FROM ALUMNOS;
+
+-- 10. ORDENAMIENTO DE REGISTROS
+SELECT * FROM ALUMNOS ORDER BY NOMBRE DESC;
+SELECT * FROM ALUMNOS ORDER BY NOMBRE ASC;
